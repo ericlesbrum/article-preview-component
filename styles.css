@@ -47,7 +47,6 @@ main {
     width: 100%;
     height: 100%;
     border-radius: 8px;
-    overflow: hidden;
 }
 
 .container .image {
@@ -66,7 +65,6 @@ main {
 .container .container-text {
     width: 485px;
     margin: 30px 35px 30px 40px;
-    padding-right: 10px;
 }
 
 .container .container-text h2 {
@@ -120,7 +118,9 @@ main {
     border: none;
     border-radius: 50px;
     cursor: pointer;
-    background-color: var(--Desaturated-Dark-Blue)
+    background-color: var(--Light-Grayish-Blue);
+    position: relative;
+    display: inline-block;
 }
 
 .container .profile-container .share:hover {
@@ -131,6 +131,40 @@ main {
     filter: invert(.5) sepia(1) saturate(5) hue-rotate(175deg);
 }
 
-.container .profile-container .share img {
+.container .profile-container .share:hover img {
     filter: brightness(0) invert(1);
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+    text-align: center;
+    color: var(--Desaturated-Dark-Blue);
+    background-color: var(--Very-Dark-Grayish-Blue);
+    width: 250px;
+    border-radius: 8px;
+    padding: 15px 25px;
+    position: absolute;
+    z-index: 1;
+    bottom: 60px;
+    left: -55px;
+    visibility: hidden;
+    margin-left: -60px;
+}
+
+.social::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 14px;
+    border-style: solid;
+    border-color: var(--Very-Dark-Grayish-Blue) transparent transparent transparent;
+}
+
+.share:hover .social {
+    visibility: visible;
 }
